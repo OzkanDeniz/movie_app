@@ -33,7 +33,7 @@ export default function Navbar() {
                   <span className="sr-only">Open user menu</span>
                   <img
                     alt=""
-                    src={avatar}
+                    src={currentUser?.photoURL || avatar}
                     className="size-8 rounded-full"
                   />
                 </MenuButton>
