@@ -13,6 +13,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const currentUser = {displayName : "felix franko"}
+  // const currentUser = false
   return (
     <Disclosure as="nav" className="bg-neutral-100 dark:bg-gray-900 dark:text-white fixed top-0 w-full z-20">
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -20,7 +21,8 @@ export default function Navbar() {
           <Link  className="pr-2 text-2xl font-semibold" to="/">Movie App</Link>
 
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {currentUser && <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>}
+            {currentUser && (<h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>)}
+            
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
