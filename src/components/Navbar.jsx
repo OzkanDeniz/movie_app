@@ -20,7 +20,7 @@ export default function Navbar() {
           <Link  className="pr-2 text-2xl font-semibold" to="/">Movie App</Link>
 
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <h5>{currentUser?.displayName}</h5>
+            {currentUser && <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>}
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
