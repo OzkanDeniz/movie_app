@@ -3,7 +3,7 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const {creaUser} = useAuthContext()
+  const {createUser} = useAuthContext()
   return (
     <div className="flex justify-center">
       <div className="overflow-hidden flex-1 h-screen justify-center items-center dark:bg-gray-dark-main">
