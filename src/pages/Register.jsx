@@ -4,6 +4,9 @@ import { useAuthContext } from "../context/AuthProvider";
 
 const Register = () => {
   const {createUser} = useAuthContext()
+  const handleSubmit=()=>{
+    createUser(email, password)
+  }
   return (
     <div className="flex justify-center">
       <div className="overflow-hidden flex-1 h-screen justify-center items-center dark:bg-gray-dark-main">
