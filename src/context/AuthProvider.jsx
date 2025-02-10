@@ -9,6 +9,18 @@ export const useAuthContext = () => {
 
 const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(false)
+
+    const createUser = async()=>{
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+
+
+
+
   const values = {currentUser};
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
