@@ -33,6 +33,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
+                onChange={handleChange}
               />
               <label htmlFor="floating_text">First Name</label>
             </div>
@@ -43,6 +44,7 @@ const Register = () => {
                 type="text"
                 required
                 placeholder=" "
+                onChange={handleChange}
               />
               <label htmlFor="floating_text">Last Name</label>
             </div>
@@ -53,6 +55,7 @@ const Register = () => {
                 type="email"
                 placeholder=" "
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_email">Email</label>
             </div>
@@ -63,6 +66,7 @@ const Register = () => {
                 type="password"
                 placeholder=" "
                 required
+                onChange={handleChange}
               />
               <label htmlFor="floating_password">Password</label>
             </div>
