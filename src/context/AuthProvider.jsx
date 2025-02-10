@@ -15,10 +15,12 @@ const AuthProvider = ({ children }) => {
   const createUser = async (email,password) => {
     try {
       signInWithEmailAndPassword(auth, email, password);
-    } catch (error) {}
+    } catch (error) {
+        console.log(error)
+    }
   };
 
-  const values = { currentUser };
+  const values = { currentUser, createUser };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
