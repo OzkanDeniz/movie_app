@@ -8,7 +8,8 @@ export const useAuthContext = () => {
 };
 
 const AuthProvider = ({ children }) => {
-  const values = {};
+    const [currentUser, setCurrentUser] = useState(false)
+  const values = {currentUser};
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
