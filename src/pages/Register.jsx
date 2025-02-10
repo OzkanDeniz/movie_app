@@ -4,14 +4,19 @@ import { useAuthContext } from "../context/AuthProvider";
 
 const Register = () => {
   const {createUser} = useAuthContext()
+
   const [info, setInfo] = useState({
     firstName:"",
     lastName:"",
     email:"",
     password:"",
   })
+
+  const handleChange=()=>{setInfo({...info, [e.target.name]:e.target.value})}
+
+
   const handleSubmit=()=>{
-    createUser(email, password)
+    // createUser(email, password)
   }
   return (
     <div className="flex justify-center">
