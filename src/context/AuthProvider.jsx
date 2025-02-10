@@ -7,11 +7,11 @@ export const useAuthContext =()=>{
     return useContext(AuthContext)
 }
 
-const AuthProvider = () => {
+const AuthProvider = ({children}) => {
   return (
-    <div>
-      
-    </div>
+    <AuthContext.Provider value={values}>
+        {children}
+    </AuthContext.Provider>
   )
 }
 
