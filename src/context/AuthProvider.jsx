@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
         password
       );
       navigate("/login");
-      console.log(userCredential);
+      console.log("Registered succeffully");
     } catch (error) {
       console.log(error);
     }
