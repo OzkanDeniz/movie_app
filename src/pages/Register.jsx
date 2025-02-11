@@ -15,7 +15,7 @@ const Register = () => {
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
-
+  console.log(info);
   const { email, password, firstName, lastName } = info;
 
   const handleSubmit = (e) => {
