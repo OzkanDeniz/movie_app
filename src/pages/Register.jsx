@@ -3,26 +3,30 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { useAuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const {createUser} = useAuthContext()
+  const { createUser } = useAuthContext();
 
   const [info, setInfo] = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    password:"",
-  })
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
 
-  const handleChange=(e)=>{setInfo({...info, [e.target.name]:e.target.value})}
+  const handleChange = (e) => {
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  };
 
+  const { email, password, firstName, lastName } = info;
 
-  const handleSubmit=()=>{
-    // createUser(email, password)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createUser(email, password);
+  };
   return (
     <div className="flex justify-center">
       <div className="overflow-hidden flex-1 h-screen justify-center items-center dark:bg-gray-dark-main">
         <div className={`form-container mt-[5vh] w-[380px] h-[580px] `}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2 className="text-red-main text-2xl font-[500] text-center tracking-[0.1em] mb-3">
               Sign Up
             </h2>
