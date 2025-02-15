@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../auth/firebase";
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
@@ -19,11 +19,10 @@ export const useAuthContext = () => {
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
-   userObserver()
-  }, [])
-  
+    userObserver();
+  }, []);
 
   const createUser = async (email, password) => {
     try {
@@ -33,7 +32,7 @@ const AuthProvider = ({ children }) => {
         email,
         password
       );
-      navigate("/login");
+      navigate("/");
       toastSuccessNotify("Registered succeffully");
     } catch (error) {
       toastErrorNotify(error.message);
