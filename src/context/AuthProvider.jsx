@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const createUser = async (email, password) => {
     try {
+      //? firebase method used to create a new user
       let userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
