@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
       toastErrorNotify(error.message);
     }
   };
-  
+
   const signIn = async (email, password) => {
     try {
       //? Firebase method used to log in the current user
@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const values = { currentUser, createUser };
+  const values = { currentUser, createUser, signIn };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
