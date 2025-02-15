@@ -70,7 +70,8 @@ const AuthProvider = ({ children }) => {
     //? Firebase method that tracks whether the user is signed in or not and returns the new user as a response when the user changes.
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
+        const { email, displayName, photoUrl } = user;
+        setCurrentUser({ email, displayName, photoUrl });
       } else {
         // User is signed out
         // ...
