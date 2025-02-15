@@ -19,6 +19,11 @@ export const useAuthContext = () => {
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+   userObserver()
+  }, [])
+  
 
   const createUser = async (email, password) => {
     try {
