@@ -42,22 +42,25 @@ const AuthProvider = ({ children }) => {
         password
       );
       navigate("/");
-      toastSuccessNotify("Logged in  succeffully");
+      toastSuccessNotify("Logged in  successffully");
     } catch (error) {
       toastErrorNotify(error.message);
     }
   };
 
-  const logOut =()=>{
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
-    
-  }
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        toastSuccessNotify("Logged out successfully");
+      })
+      .catch((error) => {
+        // An error happened.
+        toastErrorNotify(error.message);
+      });
+  };
 
-  const values = { currentUser, createUser, signIn };
+  const values = { currentUser, createUser, signIn, logOut };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
