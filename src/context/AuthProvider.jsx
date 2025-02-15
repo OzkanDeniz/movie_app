@@ -48,6 +48,15 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const logOut =()=>{
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+    
+  }
+
   const values = { currentUser, createUser, signIn };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
