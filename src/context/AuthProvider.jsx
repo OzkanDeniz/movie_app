@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
       toastSuccessNotify("Registered succeffully")
       
     } catch (error) {
-      toastErrorNotify()
+      toastErrorNotify(error.message)
     }
   };
 
