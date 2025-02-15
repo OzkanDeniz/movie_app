@@ -62,14 +62,16 @@ const AuthProvider = ({ children }) => {
       });
   };
 
-  const userObserver = () => onAuthStateChanged(auth, (user) => {
-    if (user) {
-      
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
+  const userObserver = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+  };
 
   const values = { currentUser, createUser, signIn, logOut };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
