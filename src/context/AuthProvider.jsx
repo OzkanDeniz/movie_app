@@ -69,6 +69,7 @@ const AuthProvider = ({ children }) => {
       } else {
         // User is signed out
         // ...
+        console.log("logged out")
       }
     });
   };
