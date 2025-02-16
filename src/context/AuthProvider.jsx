@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
       await updateProfile(auth.currentUser, {
         displayName,
         // displayName: displayName if key:value the same we can write as above
-      })
+      });
       navigate("/");
       toastSuccessNotify("Registered succeffully");
     } catch (error) {
@@ -84,7 +84,7 @@ const AuthProvider = ({ children }) => {
       }
     });
   };
-
+console.log(currentUser)
   const values = { currentUser, createUser, signIn, logOut };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
