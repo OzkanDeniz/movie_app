@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
     userObserver();
   }, []);
 
-  const createUser = async (email, password) => {
+  const createUser = async (email, password, displayName) => {
     try {
       //? firebase method used to create a new user
       let userCredential = await createUserWithEmailAndPassword(
@@ -32,6 +32,10 @@ const AuthProvider = ({ children }) => {
         email,
         password
       );
+      await updateProfile(auth.currentUser, {
+        displayName,
+        // displayName: displayName if key:value the same we can write as above
+      })
       navigate("/");
       toastSuccessNotify("Registered succeffully");
     } catch (error) {
