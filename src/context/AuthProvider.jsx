@@ -108,6 +108,19 @@ const AuthProvider = ({ children }) => {
         toastErrorNotify(error.message);
       });
   };
+
+  const forgotPassword = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  };
   console.log(currentUser);
   const values = { currentUser, createUser, signIn, logOut, googleProvider };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
