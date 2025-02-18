@@ -111,6 +111,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const forgotPassword = (email) => {
+    //? Firebase method used for password reset via email
     sendPasswordResetEmail(auth, email)
       .then(() => {
         // Password reset email sent!
