@@ -84,8 +84,30 @@ const AuthProvider = ({ children }) => {
       }
     });
   };
+
+  //* https://console.firebase.google.com/
+//* => Authentication => sign-in-method => enable Google
+//! Enable Google sign-in
+//* => Authentication => settings => Authorized domains => add domain
+//! After deploying the project, add the deploy link to the domain list for Google sign-in to work
+
+const  googleProvider =()=>{
+  //? Firebase method used to sign in with Google
+  const provider = new GoogleAuthProvider();
+  //? Firebase method used to log in with a pop-up window
+  signInWithPopup(auth, provider)
+  .then((result) => {
+   console.log(result)
+   navigate("/")
+   toastSuccessNotify("Logged in succesfully")
+  }).catch((error) => {
+    console.log(error)
+    toastErrorNotify(error.message)
+    
+  });
+}
 console.log(currentUser)
-  const values = { currentUser, createUser, signIn, logOut };
+  const values = { currentUser, createUser, signIn, logOut, googleProvider };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
