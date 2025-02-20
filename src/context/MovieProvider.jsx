@@ -1,6 +1,10 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 
-const MovieContext = createContext()
+export const MovieContext = createContext()
+
+export const useMovieContext = ()=>{
+    return useContext(MovieContext)
+}
 
 const MovieProvider = () => {
   return (
