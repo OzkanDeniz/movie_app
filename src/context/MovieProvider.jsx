@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const MovieContext = createContext();
@@ -20,7 +20,7 @@ const MovieProvider = ({ children }) => {
   const getMovies = () => {
     axios
       .get(FEATURED_API)
-      .then((res) => console.log(res))
+      .then((res) => setMovies(res.data.results))
       .catch((err) => console.log(err));
   };
 
