@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useAuthContext } from "./AuthProvider";
 
 export const MovieContext = createContext();
 
@@ -13,7 +14,7 @@ const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  
   useEffect(() => {
     getMovies(FEATURED_API);
   }, []);
