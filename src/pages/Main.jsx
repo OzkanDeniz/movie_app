@@ -12,7 +12,7 @@ const Main = () => {
     <>
       <div>
         {movies.map((movie) => (
-          <MovieCard />
+          <MovieCard key={movie.id} {...movie}/>
         ))}
       </div>
     </>
