@@ -6,7 +6,16 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}
 
 const Main = () => {
   const { movies, loading } = useMovieContext();
-  return <div>Main</div>;
+  console.log(movies);
+  return (
+    <>
+      <div>
+        {movies.map((movie) => (
+          <p>{movie.title}</p>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Main;
