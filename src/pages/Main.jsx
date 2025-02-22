@@ -11,9 +11,9 @@ const Main = () => {
   console.log(movies);
   return (
     <>
-    <form >
-      <input type="search" />
-    </form>
+      <form className="flex justify-center p-2 ">
+        <input type="search" className="w-80 h-8 rounded p-1 m-2 " placeholder="Search a movie..."/>
+      </form>
       <div className="flex flex-wrap justify-center">
         {loading ? (
           <Loading />
