@@ -15,7 +15,7 @@ e.preventDefault()
 if (searchTerm) {
   getMovies(SEARCH_API + searchTerm)
 } else {
-  toastWarnNotify("please enter a text!")
+  toastWarnNotify("Please enter a text!")
 }
 
 
