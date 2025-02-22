@@ -7,8 +7,8 @@ import MovieProvider from "./context/MovieProvider";
 
 const App = () => {
   return (
-    <div>
-      <AuthProvider>  
+    <div className="dark:bg-gray-dark-main min-h-screen">
+      <AuthProvider>
         <MovieProvider>
           <AppRouter />
         </MovieProvider>
