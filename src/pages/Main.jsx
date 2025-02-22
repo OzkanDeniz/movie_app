@@ -10,7 +10,7 @@ const Main = () => {
   console.log(movies);
   return (
     <>
-      <div>
+      <div className="flex flex-wrap justify-center">
         {movies.map((movie) => (
           <MovieCard key={movie.id} {...movie}/>
         ))}
