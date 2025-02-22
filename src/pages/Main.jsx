@@ -11,6 +11,9 @@ const Main = () => {
   console.log(movies);
   return (
     <>
+    <form >
+      <input type="search" />
+    </form>
       <div className="flex flex-wrap justify-center">
         {loading ? (
           <Loading />
