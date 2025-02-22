@@ -15,7 +15,7 @@ const MovieProvider = ({ children }) => {
 
   useEffect(() => {
     getMovies();
-  }, [third]);
+  }, []);
 
   const getMovies = () => {
     axios
