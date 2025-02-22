@@ -8,9 +8,10 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}
 
 const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { movies, loading } = useMovieContext();
+  const { movies, loading, getMovies } = useMovieContext();
   const handleSubmit=(e)=>{
 e.preventDefault()
+getMovies(SEARCH_API + searchTerm)
 
   }
   console.log(movies);
