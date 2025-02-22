@@ -13,6 +13,10 @@ const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
 
+  useEffect(() => {
+    getMovies();
+  }, [third]);
+
   const getMovies = () => {
     axios
       .get(FEATURED_API)
