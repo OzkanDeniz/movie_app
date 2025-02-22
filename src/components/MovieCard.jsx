@@ -7,7 +7,7 @@ const defaultImage =
 const MovieCard = ({ title, poster_path, overview, vote_average, id }) => {
   return (
     <div className="movie">
-      <img src={poster_path ? IMG_API + poster_path : defaultImage} alt="movie-card" />
+      <img loading="lazy" src={poster_path ? IMG_API + poster_path : defaultImage} alt="movie-card" />
       <div>
         <h5>{title}</h5>
         <span>{vote_average.toFixed(1)}</span>
