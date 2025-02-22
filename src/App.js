@@ -8,7 +8,7 @@ import MovieProvider from "./context/MovieProvider";
 const App = () => {
   return (
     <div>
-      <AuthProvider>
+      <AuthProvider>  
         <MovieProvider>
           <AppRouter />
         </MovieProvider>
