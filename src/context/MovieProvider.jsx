@@ -12,6 +12,7 @@ const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_
 
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
     getMovies();
@@ -24,7 +25,7 @@ const MovieProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
-  return <MovieContext.Provider value={null}>{children}</MovieContext.Provider>;
+  return <MovieContext.Provider value={{movies}}>{children}</MovieContext.Provider>;
 };
 
 export default MovieProvider;
