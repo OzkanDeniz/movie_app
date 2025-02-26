@@ -5,7 +5,7 @@ import Login from "../pages/Login";
 
 const PrivateRouter = () => {
   const { currentUer } = useAuthContext();
-  return currentUer ? <Outlet /> : <Navigate to="/login" />;
+  return currentUer ? <Outlet /> : <Navigate replace to="/login" />;
 };
 
 export default PrivateRouter;
