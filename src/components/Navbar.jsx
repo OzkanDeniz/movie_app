@@ -70,14 +70,16 @@ export default function Navbar() {
                       </MenuItem>
                     </>
                   )}
-                  <MenuItem>
-                    <span
-                      onClick={logOut}
-                      className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden cursor-pointer"
-                    >
-                      Logout
-                    </span>
-                  </MenuItem>
+                  {currentUser && (
+                    <MenuItem>
+                      <span
+                        onClick={logOut}
+                        className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden cursor-pointer"
+                      >
+                        Logout
+                      </span>
+                    </MenuItem>
+                  )}
                 </MenuItems>
               </Menu>
             </div>
