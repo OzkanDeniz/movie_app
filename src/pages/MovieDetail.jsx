@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 const MovieDetail = () => {
   const {movieId} = useParams()
-  const [movieDetails, setmovieDetails] = useState("")
+  const [movieDetails, setMovieDetails] = useState("")
 
   const API_KEY = process.env.REACT_APP_TMDB_KEY;
   const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
